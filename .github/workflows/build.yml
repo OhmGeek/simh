@@ -25,10 +25,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         if: ${{runner.os == 'macOS'}}
-        run: sh -ex .travis/deps.sh osx
+        run: sh -ex .ci/deps.sh osx
       - name: Install dependencies
         if: ${{runner.os == 'Linux'}}
-        run: sh -ex .travis/deps.sh linux
+        run: sh -ex .ci/deps.sh linux
       - name: Build
         env:
           SIM: ${{matrix.simulators}}
